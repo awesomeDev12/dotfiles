@@ -35,11 +35,8 @@ Plugin 'tpope/vim-commentary'
 " Code completion
 "Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 "Plugin 'sbdchd/neoformat'
-"Plugin 'sbdchd/neoformat'
 "Plugin 'prettier/vim-prettier', { 'do': 'npm install --frozen-lockfile --production' }
 "Plugin 'yuezk/vim-js'
-"Plugin 'maxmellon/vim-jsx-pretty'
-"Plugin 'sbdchd/neoformat'
 "Plugin 'ycm-core/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
@@ -89,13 +86,19 @@ let NERDTreeDirArrows = 1
 
 " MY COMMANDS and KEYMAP when vim opens
 " Ctrl + S
-nnoremap <c-s> :w<CR> " normal mode: save
-inoremap <c-s> <Esc>:w<CR> " insert mode: escape to normal and save
-vnoremap <c-s> <Esc>:w<CR> " visual mode: escape to normal and save
+nnoremap <c-s> :w<CR>
+" normal mode: save
+inoremap <c-s> <Esc>:w<CR>
+" insert mode: escape to normal and save
+vnoremap <c-s> <Esc>:w<CR>
+" visual mode: escape to normal and save
 " Ctrl + W
-nnoremap <c-q> :qa!<CR> " normal mode: exit
-inoremap <c-q> <Esc>:qa!<CR> " insert mode: escape to normal and save
-vnoremap <c-q> <Esc>:qa!<CR> " visual mode: escape to normal and save
+nnoremap <c-q> :qa!<CR>
+" normal mode: exit
+inoremap <c-q> <Esc>:qa!<CR>
+" insert mode: escape to normal and save
+vnoremap <c-q> <Esc>:qa!<CR>
+" visual mode: escape to normal and save
 " Change buffers
 nnoremap <C-A> <c-w>w
 inoremap <C-A> <Esc> <c-w>w
@@ -106,41 +109,54 @@ vnoremap <C-A> <Esc> <c-w>w
 " Compile C++ files
 function! CppRun()
 
-nnoremap <F5> :! g++ -g % && ./a.out <CR> " normal mode: save
-inoremap <F5> <Esc>:! g++ -g % && ./a.out <CR> " insert mode: escape to normal and save
-vnoremap <F5> <Esc>:! g++ -g % && ./a.out <CR> " visual mode: escape to normal and save
+nnoremap <F5> :! g++ -g % && ./a.out <CR> 
+" normal mode: save
+inoremap <F5> <Esc>:! g++ -g % && ./a.out <CR>
+" insert mode: escape to normal and save
+vnoremap <F5> <Esc>:! g++ -g % && ./a.out <CR>
+" visual mode: escape to normal and save
 
-nnoremap <F6> :! g++ -g % && ./a.out ; echo "" ; read gold<CR> " normal mode: save
-inoremap <F6> <Esc>:! g++ -g % && ./a.out ; echo "" ; read gold<CR> " insert mode: escape to normal and save
-vnoremap <F6> <Esc>:! g++ -g % && ./a.out ; echo "" ; read gold<CR> " visual mode: escape to normal and save
+nnoremap <F6> :! g++ -g % && ./a.out ; echo "" ; read gold<CR>
+" normal mode: save
+inoremap <F6> <Esc>:! g++ -g % && ./a.out ; echo "" ; read gold<CR> 
+" insert mode: escape to normal and save
+vnoremap <F6> <Esc>:! g++ -g % && ./a.out ; echo "" ; read gold<CR>
+" visual mode: escape to normal and save
 
-nnoremap <F7> :! g++ -g % && gdb -q -tui a.out <CR> " normal mode: save
-inoremap <F7> <Esc>:! g++ -g % && gdb -q -tui a.out <CR> " insert mode: escape to normal and save
-vnoremap <F7> <Esc>:! g++ -g % && gdb -q -tui a.out <CR> " visual mode: escape to normal and save
+nnoremap <F7> :! g++ -g % && gdb -q -tui a.out <CR>
+" normal mode: save
+inoremap <F7> <Esc>:! g++ -g % && gdb -q -tui a.out <CR>
+" insert mode: escape to normal and save
+vnoremap <F7> <Esc>:! g++ -g % && gdb -q -tui a.out <CR> 
+    " visual mode: escape to normal and save
 
 endfunction
 
 " Compile C files
 function! CRun()
 
-nnoremap <F5> :! gcc -g % && ./a.out <CR> " normal mode: save
-inoremap <F5> <Esc>:! gcc -g % && ./a.out <CR> " insert mode: escape to normal and save
-vnoremap <F5> <Esc>:! gcc -g % && ./a.out <CR> " visual mode: escape to normal and save
+nnoremap <F5> :! gcc -g % && ./a.out <CR>
+" normal mode: save
+inoremap <F5> <Esc>:! gcc -g % && ./a.out <CR>
+" insert mode: escape to normal and save
+vnoremap <F5> <Esc>:! gcc -g % && ./a.out <CR>
+" visual mode: escape to normal and save
 
-nnoremap <F6> :! gcc -g % && ./a.out ; echo "" ; read gold<CR> " normal mode: save
-inoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo "" ; read gold<CR> " insert mode: escape to normal and save
-vnoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo "" ; read gold<CR> " visual mode: escape to normal and save
+nnoremap <F6> :! gcc -g % && ./a.out ; echo "" ; read gold<CR>
+" normal mode: save
+inoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo "" ; read gold<CR>
+" insert mode: escape to normal and save
+vnoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo "" ; read gold<CR> 
+" visual mode: escape to normal and save
 
-nnoremap <F7> :! gcc -g % && gdb -q -tui a.out <CR> " normal mode: save
-inoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> " insert mode: escape to normal and save
-vnoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> " visual mode: escape to normal and save
+nnoremap <F7> :! gcc -g % && gdb -q -tui a.out <CR>
+" normal mode: save
+inoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> 
+" insert mode: escape to normal and save
+vnoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> 
+" visual mode: escape to normal and save
 
 endfunction
-
-
-"nnoremap <C-B> :%!astyle --mode=c --style=ansi -s2 <CR> " normal mode: save
-"inoremap <C-B> <Esc>:%!astyle --mode=c --style=ansi -s2<CR> " insert mode: escape to normal and save
-"vnoremap <C-B> <Esc>:!%!astyle --mode=c --style=ansi -s2 <CR> " visual mode: escape to normal and save
 
 
 function! NodeRun()
@@ -170,8 +186,10 @@ set statusline+=%#StatuslineFilename#  " Set color for the rest of the bar
 set statusline+=%=                     " Split the left and right sides
 set statusline+=%#StatuslineNumbers#   " Set color for line numbers
 set statusline+=%l,                    " Line number
-set statusline+=\                      " A space
-set statusline+=%-3c                    " Column number
+" set statusline+=\                      " A space
+" set statusline+=%-3c                    " Column number
+set statusline+=%c                    " Column number
+set statusline+=\ \|\                  " A separator
 set statusline+=%L                     " Total number of lines
 set statusline+=\ \|\                  " A separator
 " status line position
@@ -229,35 +247,12 @@ let g:ale_sign_warning = '.'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 
-" Ale prettier 
-"let g:ale_linters = {
-"\   'markdown':      ['mdl'],
-"\}
-
-"let g:ale_linters = {
-"\   'markdown':      ['mdl', 'writegood'],
-"\}
-
-
-"let g:ale_fixers = {
-"\   '*':          ['remove_trailing_lines', 'trim_whitespace'],
-"\}
-
-"let g:ale_fixers = {
-"\   'javascript': ['prettier'],
-"\   'css': ['prettier'],
-"\   'md': ['prettier'],
-"\}
-
-
+" Emmet Abbreviation
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-"only enable normal mode functions.
-"let g:user_emmet_mode='i' 
-
-"search highlight
-"set hlsearch
+autocmd FileType html,css,javacript EmmetInstall
+"let g:user_emmet_leader_key='e'
+let g:user_emmet_expandabbr_key='<C-B>'
+inoremap <C-B> <Esc>
 
 "Prettier
 "PrettierAsync
@@ -272,19 +267,6 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 
 
-"Neoformat
-
-"format on save
-"autocmd BufWritePost * Neoformat %
-"
-"augroup fmt
-"  autocmd!
-"  autocmd BufWritePre * undojoin | Neoformat
-"augroup END
-
-" runs all formatters for current buffer without tab to spaces conversion
-"    let b:neoformat_run_all_formatters = 1
-"    let b:neoformat_basic_format_retab = 0
 " Ale fixers
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
@@ -292,15 +274,14 @@ let g:ale_fixers = {
 \}
 
 function! AstyleF()
-   let line= line(".")
+   " let line= line(".")
+   let line=getcurpos()[1]
+   let col=getcurpos()[2]
     %!astyle --mode=c --style=ansi -s4
-   execute  printf('%d',line)
+   call cursor(line,col) 
+   " execute  printf('%d',line)
 endfunction
 
-"astyle
-"autocmd BufNewFile,BufRead,BufWritePre *.cpp set formatprg=astyle\ --options="$HOME/.astylerc"\
-"autocmd BufWritePost *.cpp  %!astyle --mode=c --style=ansi -s2 
-"(ansi C++ style, use two spaces per indent level)
 autocmd BufWritePost *.cpp call AstyleF() 
 autocmd BufWritePost *.c call AstyleF() 
 autocmd FileType cpp call CppRun()
@@ -316,8 +297,8 @@ autocmd FileType apache setlocal commentstring=#\ %s
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -328,46 +309,6 @@ vnoremap <C-y> "*y :let @+=@*<CR>
 " https://duckduckgo.com/?t=ffab&q=copy+to+clipboard+vim&ia=web&iax=qa
 " must have vim-gtk (aka gvim) installed 
 
-" CoC
-" GoTo code navigation.
-" nmap <leader>gd <Plug>(coc-definition)
-" nmap <leader>gy <Plug>(coc-type-definition)
-" nmap <leader>gi <Plug>(coc-implementation)
-" nmap <leader>gr <Plug>(coc-references)
-" nmap <leader>rr <Plug>(coc-rename)
-" nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-" nmap <leader>g] <Plug>(coc-diagnostic-next)
-" nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-" nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-" nnoremap <leader>cr :CocRestart
-
-""" Customize colors
-" func! s:my_colors_setup() abort
-"     " this is an example
-"     hi Pmenu guibg=#d7e5dc gui=NONE
-"     hi PmenuSel guibg=#b7c7b7 gui=NONE
-"     hi PmenuSbar guibg=#bcbcbc
-"     hi PmenuThumb guibg=#585858
-" endfunc
-" 
-" augroup colorscheme_coc_setup | au!
-"     au ColorScheme * call s:my_colors_setup()
-" augroup END
-
-
-"To choose another background color you can use
-
-":highlight CocFloating ctermbg=color
-"highlight CocFloating ctermbg=White
-"And to change the foreground (text) color of the error message use
-
-":highlight CocErrorFloat ctermfg=color
-"highlight CocErrorFloat ctermfg=Black
-
-"where color is either a color name or a color number (generally from 0 to 15).
-"To read more on color values
-":h cterm-colors
-
 " Search and replace hotkey
 nnoremap H :%s//gc<left><left><left>
 
@@ -375,6 +316,49 @@ nnoremap H :%s//gc<left><left><left>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+
+
+function! FileFormat()
+    let cursorLine = line(".")
+    let filetype = &filetype
+    let tab_width = 4
+    let text = join(getbufline(".", 1, "$"), "\n")
+    let output
+
+    if filetype == "json"
+        output = system("jq .")
+    elseif filetype == 'cpp' || filetype == "c"
+        output = system("astyle --style=java --indent=spaces=" . tab_width . " --pad-oper -N -C --indent-labels -xw -xW -w --mode=c")
+    elseif filetype == "java"
+        output = system("astyle --style=java --indent=spaces=" . tab_width . " --mode=java")
+    elseif filetype == 'sh' || filetype == "zsh"
+        output = system("shfmt -i " . tab_width)
+    elseif filetype == 'javascript' || filetype == "js" || filetype == "typescript" || filetype == "ts"
+        output = system("prettier --parser typescript --print-width 160 --tab-width " . tab_width)
+    elseif filetype == 'css' || filetype == "scss" || filetype == "less" || filetype == "graphql" || filetype == "markdown" || filetype == "vue" || filetype == "html"
+        output = system("prettier --parser " . filetype . " --print-width 160 --tab-width " . tab_width)
+    elseif filetype == 'python'
+        output = system("autopep8 --max-line-length 10000 -")
+    elseif filetype == 'lua'
+        output = system("stylua - --indent-type Spaces --indent-width " . tab_width . " --call-parentheses None --quote-style AutoPreferDouble")
+    elseif filetype == 'tex' || filetype == "plaintex"
+        output = system("latexindent")
+    elseif filetype == "xml"
+        output = system("xmllint --encode \"UTF-8\" --format -")
+    else
+        echo "Formatting of " . filetype  . " files is not currently supported."
+        return
+    endif
+
+    if v:shell_error
+        echo output
+        return
+    endif
+
+    deletebufline(".", 1, "$")
+    setbufline('.', 1, split(output, '\n'))
+    execute cursorLine
+endfunction
 "Nerd tree set modifiable 
 set ma
 " vertical and horizontal split
