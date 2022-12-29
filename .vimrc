@@ -32,6 +32,9 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'vim-scripts/Auto-Pairs'
 
 Plugin 'tpope/vim-commentary'
+
+"Plugin 'iamcco/mathjax-support-for-mkdp'
+"Plugin 'iamcco/markdown-preview.vim'
 " Code completion
 "Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 "Plugin 'sbdchd/neoformat'
@@ -58,9 +61,9 @@ filetype plugin indent on    " required
 " ALE linter
 " for ale linter key binding to move to next error using Ctrl + e
 "nmap <silent> <C-e> <Plug>(ale_next_wrap)
-nnoremap <c-e> <Plug>(ale_next_wrap) 
-inoremap <c-e> <Esc> <Plug>(ale_next_wrap) 
-vnoremap <c-e> <Esc> <Plug>(ale_next_wrap)
+nnoremap <C-e> <Plug>(ale_next_wrap) 
+inoremap <C-e> <Esc> <Plug>(ale_next_wrap) 
+vnoremap <C-e> <Esc> <Plug>(ale_next_wrap)
 
 " NerdTree config
 
@@ -228,6 +231,53 @@ let g:vim_markdown_strikethrough = 1
 let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'tab'
 let g:vim_markdown_follow_anchor = 1
+
+
+"Mark down preview
+"let g:mkdp_path_to_chrome = ""
+" Path to the chrome or the command to open chrome (or other modern browsers).
+" If set, g:mkdp_browserfunc would be ignored.
+
+" let g:mkdp_browserfunc = 'MKDP_browserfunc_default'
+" Callback Vim function to open browser, the only parameter is the url to open.
+
+" let g:mkdp_auto_start = 0
+" Set to 1, Vim will open the preview window on entering the Markdown
+" buffer.
+
+" let g:mkdp_auto_open = 0
+" Set to 1, Vim will automatically open the preview window when you edit a
+" Markdown file.
+
+" let g:mkdp_auto_close = 1
+" Set to 1, Vim will automatically close the current preview window when
+" switching from one Markdown buffer to another.
+
+" let g:mkdp_refresh_slow = 0
+" Set to 1, Vim will just refresh Markdown when saving the buffer or
+" leaving from insert mode. With default 0, it will automatically refresh
+" Markdown as you edit or move the cursor.
+
+" let g:mkdp_command_for_global = 0
+" Set to 1, the MarkdownPreview command can be used for all files,
+" by default it can only be used in Markdown files.
+
+" let g:mkdp_open_to_the_world = 0
+" Set to 1, the preview server will be available to others in your network.
+" By default, the server only listens on localhost (127.0.0.1).
+
+"Keymappings
+" for normal mode
+" nmap <silent> <F8> <Plug>MarkdownPreview
+" for insert mode
+" imap <silent> <F8> <Plug>MarkdownPreview
+" for normal mode
+" nmap <silent> <F9> <Plug>StopMarkdownPreview
+" for insert mode
+" imap <silent> <F9> <Plug>StopMarkdownPreview
+
+
+
 " Have lines wrap instead of continue off-screen
 set linebreak
 
@@ -239,6 +289,7 @@ set scrolloff=12
 
 "Ale
 "let g:ale_lint_on_text_changed = 'never'
+" let g:ale_enabled=0
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 0
 let g:ale_sign_error = '●'
@@ -249,7 +300,7 @@ let g:ale_lint_on_enter = 0
 
 " Emmet Abbreviation
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,javacript EmmetInstall
+autocmd FileType html,css,javascript EmmetInstall
 "let g:user_emmet_leader_key='e'
 let g:user_emmet_expandabbr_key='<C-B>'
 inoremap <C-B> <Esc>
@@ -359,6 +410,7 @@ function! FileFormat()
     setbufline('.', 1, split(output, '\n'))
     execute cursorLine
 endfunction
+
 "Nerd tree set modifiable 
 set ma
 " vertical and horizontal split
