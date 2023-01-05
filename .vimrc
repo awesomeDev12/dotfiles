@@ -161,6 +161,43 @@ vnoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR>
 
 endfunction
 
+" Compile Java files
+function! JavaRun()
+
+nnoremap <F5> :! javac -g % && java '%:r'<CR>
+" nnoremap <F5> :! mkdir -p build && javac -g % -d build/ && java './build/%:r'<CR>
+" nnoremap <F5> :! mkdir -p build && javac -g % -d build/<CR>
+" normal mode: save
+inoremap <F5> <Esc>:! javac -g % && java '%:r'<CR>
+vnoremap <F5> <Esc>:! javac -g % && java '%:r'<CR>
+
+
+" nnoremap <F6> :! gcc -g % && ./a.out ; echo '' ; read gold<CR>
+" normal mode: save
+" inoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo '' ; read gold<CR>
+" insert mode: escape to normal and save
+" vnoremap <F6> <Esc>:! gcc -g % && ./a.out ; echo '' ; read gold<CR> 
+" visual mode: escape to normal and save
+nnoremap <F7> :! javac -g % && jdb '%:r'<CR>
+inoremap <F7> <Esc>:! javac -g % && jdb '%:r'<CR>
+vnoremap <F7> <Esc>:! javac -g % && jdb '%:r'<CR>
+" nnoremap <F7> :! gcc -g % && gdb -q -tui a.out <CR>
+" normal mode: save
+" inoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> 
+" insert mode: escape to normal and save
+" vnoremap <F7> <Esc>:! gcc -g % && gdb -q -tui a.out <CR> 
+" visual mode: escape to normal and save
+
+endfunction
+
+" Compile Java files
+function! MarkdownRun()
+
+nnoremap <F5> :! glow %<CR>
+inoremap <F5> <Esc>:! glow %<CR>
+vnoremap <F5> <Esc>:! glow %<CR>
+endfunction
+
 
 function! NodeRun()
 nnoremap <F5> :! node % ; echo "" ; read gold <CR> 
@@ -278,6 +315,17 @@ let g:vim_markdown_follow_anchor = 1
 
 
 
+" Markdown Previewer start  using glow
+" function! PreviewerMarkdown()
+"     let l:path=expand('%:p')
+"     silent execute "!echo ".l:path." > ~/lastpreview.log"
+"     :execute "bel vert terminal"
+" endfunction
+" Markdown Previewer end using glow
+" Key mapping
+"nmap <F4> : call PreviewerMarkdown()<CR>clear<CR>glow $(cat ~/.lastpreview.log)<CR>
+
+
 " Have lines wrap instead of continue off-screen
 set linebreak
 
@@ -289,7 +337,7 @@ set scrolloff=12
 
 "Ale
 "let g:ale_lint_on_text_changed = 'never'
-" let g:ale_enabled=0
+"let g:ale_enabled=0
 let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_insert_leave = 0
 let g:ale_sign_error = '●'
@@ -337,7 +385,8 @@ autocmd BufWritePost *.cpp call AstyleF()
 autocmd BufWritePost *.c call AstyleF() 
 autocmd FileType cpp call CppRun()
 autocmd FileType c call CRun()
-
+autocmd FileType java call JavaRun()
+autocmd FileType markdown call MarkdownRun()
 
 "Vim Commentary
 autocmd FileType apache setlocal commentstring=#\ %s
