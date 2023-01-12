@@ -142,10 +142,14 @@ export NVM_DIR="$HOME/.nvm"
 #
 ######################################################################
 
-
+# Prompt string modification
 PS1="${PS1::-3} \n$ "
 
+# Run CLI commands in VI (not sure how it works)
 set -o vi
+
+
+# HISTORY Begin
 
 HISTTIMEFORMAT="%F %T "
 
@@ -154,8 +158,12 @@ HISTCONTROL=ignoredups
 HISTSIZE=2000
 
 HISTFILESIZE=2000
-
 shopt -s histappend
+
+# HISTORY End
+
+
+#COLORS Begin
 
 blk='\[\033[01;30m\]'   # Black
 red='\[\033[01;31m\]'   # Red
@@ -166,6 +174,11 @@ pur='\[\033[01;35m\]'   # Purple
 cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
+
+#COLORS End
+
+
+# Aliases Begin
 
 alias gs='git status'
 
@@ -210,11 +223,18 @@ alias oct='cal -m 10'
 alias nov='cal -m 11'
 alias dec='cal -m 12'
 
+# ww3m browser
+alias w3m='w3m duckduckgo.com'
+
+# Aliases End
+
+# Functions Begin
+
 function hg() {
     history | grep "$1";
 }
 
-
+# Functions End
 
 
 # Xmod 
@@ -225,5 +245,5 @@ function hg() {
 ### Undo the swap action
 # xmodmap -e "keycode 66 = Caps_Lock"; xmodmap -e "keycode 9 = Escape"
 
-# swap capslock and esc keys
+# Swap Capslock and Esc keys
 setxkbmap -option caps:swapescape
