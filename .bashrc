@@ -181,6 +181,8 @@ alias gb='git checkout -b'
 
 alias gd='git diff'
 
+alias gp='git push'
+
 alias ..='cd ..;pwd'
 
 alias ...='cd ../..;pwd'
