@@ -243,4 +243,4 @@ function hg() {
 # xmodmap -e "keycode 66 = Caps_Lock"; xmodmap -e "keycode 9 = Escape"
 
 # Swap Capslock and Esc keys
-setxkbmap -option caps:swapescape
+# setxkbmap -option caps:swapescape
