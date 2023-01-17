@@ -7,7 +7,9 @@ set debuginfod enabled off
 skip -gfi /usr/include/c++/5/bits/*.h
 skip -gfi /usr/include/c++/12/bits/*.h
 skip -gfi /usr/include/c++/12.2.0/bits/*.h
+
 skip -gfi /usr/src/debug/gcc-build/x86_64-pc-linux-gnu/libstdc++-v3/include/bits/*.h
+skip -gfi /usr/src/debug/gcc-build/x86_64-pc-linux-gnu/libstdc++-v3/include/bits/*.tcc
 skip function std::ios_base::sync_with_stdio
 skip function std::basic_ios<char,std::char_traits<char>>::tie
 skip function freopen
