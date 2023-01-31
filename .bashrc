@@ -223,6 +223,13 @@ alias dec='cal -m 12'
 # ww3m browser
 alias w3m='w3m duckduckgo.com'
 
+# watch output
+alias wao='watch -n 0.5 cat output.txt'
+
+# python virtualenv
+alias act='source ~/venvs/.nvim-venv/bin/activate'
+
+
 # Aliases End
 
 # Functions Begin
@@ -244,3 +251,7 @@ function hg() {
 
 # Swap Capslock and Esc keys
 # setxkbmap -option caps:swapescape
+
+# Add pylint to path
+export PATH=$PATH:/home/darklord/.local/bin/pylint
+
