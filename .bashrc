@@ -253,5 +253,11 @@ function hg() {
 # setxkbmap -option caps:swapescape
 
 # Add pylint to path
-export PATH=$PATH:/home/darklord/.local/bin/pylint
+export PATH=$PATH:/home/${USER}/.local/bin/pylint
+# export PATH=$PATH:/home/darklord/.local/bin/pylint
+#
+# Can add to  coc-config 
+#
+#   "python.linting.pylintPath": "~/venvs/.nvim-venv/bin/pylint"
+
 
